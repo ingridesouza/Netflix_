@@ -96,3 +96,28 @@ h2 {
 .bad {
     color: rgb(177, 0, 0)
 }
+
+.details-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    overflow: hidden;
+    position: relative;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.details-container img {
+    width: 67rem;
+    border-radius: 5px;
+}
+
+.details-container .details {
+    width: 50rem;
+    box-sizing: border-box;
+}
+.details{
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+}

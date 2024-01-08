@@ -50,29 +50,33 @@ async function showDetails(movieId, type = 'movie') {
         let formattedReleaseDate = element.release_date.split("-").reverse().join("/")
     
         homeSection.innerHTML = `
-            <div>
+            <div class="details-container">
+            <img src="${IMG_BASE + element.backdrop_path}" />
+            <div class="details">
                 <h1>${element.title}</h1>
-                <p>${element.overview}</p>
+                <h1>${element.overview}</h1>
                 <p>Data de lançamento: ${formattedReleaseDate}</p>
                 <p>Gêneros: ${element.genres.map(genre => " " + genre.name)}</p>
-                <span class=${averageClass}>
+                <h1 class=${averageClass}>
                     ${(element.vote_average * 10).toFixed(0)}% gostaram
-                </span>
+                </h1>
             </div>
-            <img src="${IMG_BASE + element.backdrop_path}" />
-        `
+            </div>
+        `;
     } else {
         let formattedFirstAirDate = element.first_air_date.split("-").reverse().join("/")
     
         homeSection.innerHTML = `
-            <div>
+        <div class="details-container">
+        <img src="${IMG_BASE + element.backdrop_path}" />
+            <div class="details">
                 <h1>${element.name}</h1>
                 <p>${element.overview}</p>
                 <p>Data de lançamento: ${formattedFirstAirDate}</p>
                 <p>Gêneros: ${element.genres.map(genre => " " + genre.name)}</p>
             </div>
-            <img src="${IMG_BASE + element.backdrop_path}" />
-        `
+        </div>
+    `;
     }
 
 }
